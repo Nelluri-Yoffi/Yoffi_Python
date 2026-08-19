@@ -1,14 +1,12 @@
-students = {}  # name -> list of marks
+students = {} 
 def add_student():
     name = input("Student name: ").strip()
     marks_input = input("Enter marks separated by spaces (e.g. 78 85 90): ")
-
     try:
         marks = [int(m) for m in marks_input.split()]
     except ValueError:
         print("Invalid input, marks must be numbers.\n")
         return
-
     students[name] = marks
     print(f"Added {name} with marks {marks}.\n")
 def grade_for(average):
@@ -26,7 +24,6 @@ def show_report():
     if not students:
         print("No students added yet.\n")
         return
-
     print(f"\n{'Name':<15}{'Average':<10}{'Grade'}")
     print("-" * 32)
     for name, marks in students.items():
@@ -37,8 +34,6 @@ def show_topper():
     if not students:
         print("No students added yet.\n")
         return
-
-    # Find the student with the highest average using max() + a lambda key
     averages = {name: sum(marks) / len(marks) for name, marks in students.items()}
     top_name = max(averages, key=averages.get)
     print(f"Topper: {top_name} with average {averages[top_name]:.1f}\n")
