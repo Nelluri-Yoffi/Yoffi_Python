@@ -1,0 +1,7 @@
+def maximum_odd_binary_number(s):
+    ones = s.count('1')   
+    zeros = s.count('0') 
+    result = '1' * (ones - 1) + '0' * zeros + '1'
+    return result
+print(maximum_odd_binary_number("010")) 
+print(maximum_odd_binary_number("0101")) 
