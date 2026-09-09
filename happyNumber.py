@@ -7,5 +7,6 @@ def is_happy(n):
             total += int(digit) ** 2
         n = total
     return n == 1
+
 print(is_happy(19))  
 print(is_happy(2))
